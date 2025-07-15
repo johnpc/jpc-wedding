@@ -40,3 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 *.log
+# Google Sheets API credentials
+wedding-466018-ad374378e97f.json
+.env
+.env.local
+scripts/

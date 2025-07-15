@@ -47,12 +47,14 @@ This wedding website includes all the essential features couples need:
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd jpc-wedding
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
@@ -78,6 +80,7 @@ kill <process-id>
 ```
 
 Alternative development commands:
+
 ```bash
 # Using yarn
 yarn dev > dev.log 2>&1 &
@@ -153,11 +156,11 @@ The website uses CSS custom properties (variables) defined in `globals.css`:
 
 ```css
 :root {
-  --color-primary: #8B5A3C;      /* Main brown color */
-  --color-secondary: #D4B5A0;    /* Light brown */
-  --color-accent: #F5E6D3;       /* Cream background */
-  --color-text: #2C1810;         /* Dark text */
-  --color-text-light: #6B5B73;   /* Light text */
+  --color-primary: #8b5a3c; /* Main brown color */
+  --color-secondary: #d4b5a0; /* Light brown */
+  --color-accent: #f5e6d3; /* Cream background */
+  --color-text: #2c1810; /* Dark text */
+  --color-text-light: #6b5b73; /* Light text */
 }
 ```
 
@@ -178,17 +181,30 @@ The easiest way to deploy is using [Vercel](https://vercel.com/new):
 3. Deploy automatically
 
 Alternative deployment options:
+
 - [Netlify](https://netlify.com)
 - [AWS Amplify](https://aws.amazon.com/amplify/)
 - Any static hosting service
 
 ## RSVP Form Integration
 
-The RSVP form is currently a static form. To make it functional, you'll need to:
+The RSVP form is integrated with Google Sheets to store responses. This allows you to:
 
-1. Set up a backend service (e.g., Formspree, Netlify Forms, or custom API)
-2. Add form submission handling in the React component
-3. Configure email notifications for new RSVPs
+1. Collect guest responses in real-time
+2. Track attendance, dietary restrictions, and special messages
+3. Export data for wedding planning purposes
+
+### Setting Up the RSVP Form
+
+To set up the Google Sheets integration:
+
+1. Create a Google Cloud project and enable the Google Sheets API
+2. Create a service account and download the credentials JSON file
+3. Save the credentials file as `wedding-466018-ad374378e97f.json` in the project root
+4. Run the setup script: `node scripts/setup-sheets.js`
+5. Follow the instructions in `RSVP-SETUP.md` for detailed setup steps
+
+For more information, see [RSVP-SETUP.md](./RSVP-SETUP.md).
 
 ## Browser Support
 
@@ -214,6 +230,7 @@ This project is for personal use. Feel free to use it as a template for your own
 ## Support
 
 For questions about Next.js, visit:
+
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Learn Next.js](https://nextjs.org/learn)
 - [Next.js GitHub](https://github.com/vercel/next.js)

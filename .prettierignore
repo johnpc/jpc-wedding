@@ -1,0 +1,10 @@
+.prettierignore
+.gitignore
+.next/
+*.ico
+*.svg
+*.png
+*.txt
+.env*
+*.xml
+*.log
