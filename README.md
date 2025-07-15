@@ -1,36 +1,219 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# John & Emily's Wedding Website
+
+A beautiful, responsive wedding website built with Next.js for John and Emily's wedding celebration on July 11, 2026 at Circ in Ann Arbor, Michigan.
+
+## Features
+
+This wedding website includes all the essential features couples need:
+
+- **Hero Section** - Beautiful landing with couple names and wedding date
+- **Our Story** - How we met and proposal story with placeholder images
+- **Wedding Details** - Date, time, venue, parking, and dress code information
+- **Schedule** - Complete timeline of the wedding day events
+- **Photo Gallery** - Collection of couple photos (currently using placeholder images)
+- **RSVP Form** - Guest response form with dietary restrictions and special messages
+- **Wedding Registry** - Links to gift registries and honeymoon fund
+- **Responsive Design** - Works perfectly on desktop, tablet, and mobile devices
+- **Smooth Scrolling Navigation** - Easy navigation between sections
+- **Elegant Styling** - Warm earth tone color scheme with beautiful typography
+- **PWA Support** - Progressive Web App features for mobile installation and offline access
+- **Custom Icon** - Beautiful wedding-themed icon generated with AI
+
+## Wedding Details
+
+- **Date**: Saturday, July 11, 2026
+- **Venue**: Circ, 210 S 1st St, Ann Arbor, MI 48104
+- **Ceremony**: 4:00 PM
+- **Reception**: 6:00 PM
+- **Parking**: Free parking available in the lot across the street
+
+## Technology Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Styling**: Custom CSS (no external CSS frameworks)
+- **Fonts**: Playfair Display (headings) and Inter (body text) from Google Fonts
+- **Images**: Placeholder images from Unsplash (ready to be replaced with real photos)
+- **TypeScript**: Full TypeScript support for type safety
+- **PWA**: Progressive Web App with service worker for offline functionality
+- **Icons**: Custom AI-generated wedding icon in multiple sizes for all devices
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- npm, yarn, pnpm, or bun package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd jpc-wedding
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+### Development
+
+**Important Note**: Never run `npm run dev` in the foreground as it blocks execution. Always run it in the background with logs piped to a file.
+
+To start the development server in the background:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Run development server in background with logs
+npm run dev > dev.log 2>&1 &
+
+# To view logs in real-time
+tail -f dev.log
+
+# To stop the background process
+pkill -f "npm run dev"
+# or find the process ID and kill it
+ps aux | grep "npm run dev"
+kill <process-id>
+```
+
+Alternative development commands:
+```bash
+# Using yarn
+yarn dev > dev.log 2>&1 &
+
+# Using pnpm
+pnpm dev > dev.log 2>&1 &
+
+# Using bun
+bun dev > dev.log 2>&1 &
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### File Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout with fonts and metadata
+│   ├── page.tsx            # Main wedding website page
+│   ├── globals.css         # Global styles and CSS variables
+│   ├── sw-register.js      # Service worker registration
+│   └── favicon.ico         # Website favicon
+public/
+├── icons/                  # Various icon sizes for different devices
+│   ├── icon-16.png
+│   ├── icon-32.png
+│   └── ...
+├── manifest.json           # PWA manifest file
+├── sw.js                   # Service worker for offline functionality
+├── browserconfig.xml       # Configuration for Microsoft tiles
+├── robots.txt              # SEO configuration
+└── favicon.ico             # Favicon for browsers
+```
 
-## Learn More
+### PWA Features
 
-To learn more about Next.js, take a look at the following resources:
+The website includes Progressive Web App (PWA) functionality:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Installable**: Users can add the website to their home screen on mobile devices
+2. **Offline Access**: Core content is cached and available offline
+3. **App-like Experience**: Full-screen mode without browser UI when installed
+4. **Fast Loading**: Service worker caches assets for quick loading
+5. **Custom Icon**: Beautiful wedding-themed icon on the home screen
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Customization
 
-## Deploy on Vercel
+#### Replacing Placeholder Images
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The website currently uses placeholder images from Unsplash. To add your real photos:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Add your images to the `public/` directory
+2. Update the image sources in `src/app/page.tsx`:
+   - Hero background image
+   - About section couple photos
+   - Gallery images
+
+#### Updating Content
+
+Key areas to customize in `src/app/page.tsx`:
+
+- **Names**: Update "John & Emily" throughout the file
+- **Wedding Date**: Currently set to July 11, 2026
+- **Venue Information**: Update Circ venue details if needed
+- **Our Story**: Replace placeholder text with your real story
+- **Timeline**: Adjust wedding day schedule as needed
+- **Registry Links**: Add real registry URLs
+- **Contact Information**: Update social links in footer
+
+#### Styling
+
+The website uses CSS custom properties (variables) defined in `globals.css`:
+
+```css
+:root {
+  --color-primary: #8B5A3C;      /* Main brown color */
+  --color-secondary: #D4B5A0;    /* Light brown */
+  --color-accent: #F5E6D3;       /* Cream background */
+  --color-text: #2C1810;         /* Dark text */
+  --color-text-light: #6B5B73;   /* Light text */
+}
+```
+
+Change these values to match your preferred color scheme.
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+### Deployment
+
+The easiest way to deploy is using [Vercel](https://vercel.com/new):
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically
+
+Alternative deployment options:
+- [Netlify](https://netlify.com)
+- [AWS Amplify](https://aws.amazon.com/amplify/)
+- Any static hosting service
+
+## RSVP Form Integration
+
+The RSVP form is currently a static form. To make it functional, you'll need to:
+
+1. Set up a backend service (e.g., Formspree, Netlify Forms, or custom API)
+2. Add form submission handling in the React component
+3. Configure email notifications for new RSVPs
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## Contributing
+
+This is a personal wedding website. If you're using this as a template for your own wedding:
+
+1. Fork the repository
+2. Update all personal information
+3. Replace placeholder images with your photos
+4. Customize colors and styling to match your preferences
+
+## License
+
+This project is for personal use. Feel free to use it as a template for your own wedding website.
+
+## Support
+
+For questions about Next.js, visit:
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
+- [Next.js GitHub](https://github.com/vercel/next.js)
