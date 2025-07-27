@@ -122,10 +122,11 @@ public/
 The website includes Progressive Web App (PWA) functionality:
 
 1. **Installable**: Users can add the website to their home screen on mobile devices
-2. **Offline Access**: Core content is cached and available offline
-3. **App-like Experience**: Full-screen mode without browser UI when installed
-4. **Fast Loading**: Service worker caches assets for quick loading
-5. **Custom Icon**: Beautiful wedding-themed icon on the home screen
+2. **App-like Experience**: Full-screen mode without browser UI when installed
+3. **Custom Icon**: Beautiful wedding-themed icon on the home screen
+4. **No Aggressive Caching**: Service worker updated to prevent caching issues that could block updates
+
+**Note**: Caching has been removed to ensure users always receive the latest updates. If users report not seeing new features, direct them to `/clear-cache.html` to clear their browser cache.
 
 ### Customization
 
@@ -226,6 +227,31 @@ To set up the Google Sheets integration for song requests:
 4. Follow the instructions in `SONG-REQUEST-SETUP.md` for detailed setup steps
 
 For more information, see [SONG-REQUEST-SETUP.md](./SONG-REQUEST-SETUP.md).
+
+## Troubleshooting
+
+### Users Not Seeing Updates
+
+If users report not seeing new features or updates:
+
+1. **Direct them to the cache clearing page**: `/clear-cache.html`
+2. **Manual browser refresh**: Instruct them to use hard refresh:
+   - **Chrome/Edge**: Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)
+   - **Firefox**: Ctrl+F5 (Windows) or Cmd+Shift+R (Mac)
+   - **Safari**: Cmd+Option+R
+3. **Clear browser data**: Have them clear browsing data/cache in browser settings
+
+### Development Cache Issues
+
+During development, if you're not seeing changes:
+
+```bash
+# Clear Next.js cache
+rm -rf .next
+
+# Restart development server
+npm run dev > dev.log 2>&1 &
+```
 
 ## Browser Support
 
