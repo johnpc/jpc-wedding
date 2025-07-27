@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { registerServiceWorker } from "./sw-register";
 import Image from "next/image";
 import RsvpForm from "./components/RsvpForm";
+import SongRequestForm from "./components/SongRequestForm";
 import MapLinks from "../components/MapLinks";
 import CalendarLinks from "../components/CalendarLinks";
 import ParkingMapLinks from "../components/ParkingMapLinks";
@@ -93,6 +94,15 @@ export default function Home() {
                 RSVP
               </a>
             </li>
+            <li>
+              <a
+                href="#song-requests"
+                className="nav-link"
+                onClick={() => scrollToSection("song-requests")}
+              >
+                Song Requests
+              </a>
+            </li>
           </ul>
           <button
             className="mobile-menu-toggle"
@@ -159,6 +169,15 @@ export default function Home() {
               onClick={() => scrollToSection("rsvp")}
             >
               RSVP
+            </a>
+          </li>
+          <li className="mobile-menu-item">
+            <a
+              href="#song-requests"
+              className="mobile-menu-link"
+              onClick={() => scrollToSection("song-requests")}
+            >
+              Song Requests
             </a>
           </li>
         </ul>
@@ -460,10 +479,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Song Requests Section */}
+      <section
+        id="song-requests"
+        className="section"
+        style={{ background: "var(--color-accent)" }}
+      >
+        <div className="container">
+          <h2 className="section-title">Song Requests</h2>
+          <p className="section-subtitle">
+            Help us create the perfect playlist for our reception! Request your
+            favorite songs and we&apos;ll do our best to play them.
+          </p>
+
+          <SongRequestForm />
+        </div>
+      </section>
+
       {/* Registry Section */}
       <section
         className="section"
-        style={{ background: "var(--color-accent)" }}
       >
         <div className="container">
           <h2 className="section-title">Wedding Registry</h2>

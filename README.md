@@ -12,6 +12,7 @@ This wedding website includes all the essential features couples need:
 - **Schedule** - Complete timeline of the wedding day events
 - **Photo Gallery** - Collection of couple photos (currently using placeholder images)
 - **RSVP Form** - Guest response form with dietary restrictions and special messages
+- **Song Request Form** - Allow guests to request their favorite songs for the reception
 - **Wedding Registry** - Links to gift registries and honeymoon fund
 - **Responsive Design** - Works perfectly on desktop, tablet, and mobile devices
 - **Smooth Scrolling Navigation** - Easy navigation between sections
@@ -205,6 +206,26 @@ To set up the Google Sheets integration:
 5. Follow the instructions in `RSVP-SETUP.md` for detailed setup steps
 
 For more information, see [RSVP-SETUP.md](./RSVP-SETUP.md).
+
+## Song Request Form Integration
+
+The song request form allows guests to submit their favorite songs for the reception, with all requests automatically saved to a separate Google Sheets spreadsheet. This enables you to:
+
+1. Collect song requests from guests in real-time
+2. Share the list with your DJ or band
+3. Create the perfect wedding playlist based on guest preferences
+4. Track special requests for specific moments (first dance, parent dance, etc.)
+
+### Setting Up the Song Request Form
+
+To set up the Google Sheets integration for song requests:
+
+1. Use the same Google Cloud project and service account from RSVP setup
+2. Run the setup script: `node scripts/setup-song-requests.js`
+3. Add the `GOOGLE_SHEETS_SONG_REQUEST_SPREADSHEET_ID` environment variable
+4. Follow the instructions in `SONG-REQUEST-SETUP.md` for detailed setup steps
+
+For more information, see [SONG-REQUEST-SETUP.md](./SONG-REQUEST-SETUP.md).
 
 ## Browser Support
 
