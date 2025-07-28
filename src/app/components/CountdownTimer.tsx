@@ -35,11 +35,13 @@ export default function CountdownTimer() {
         // Calculate months and remaining days
         const currentDate = new Date(now);
         let months = 0;
-        
+
         // Count full months
-        while (currentDate.getFullYear() < weddingDate.getFullYear() || 
-               (currentDate.getFullYear() === weddingDate.getFullYear() && 
-                currentDate.getMonth() < weddingDate.getMonth())) {
+        while (
+          currentDate.getFullYear() < weddingDate.getFullYear() ||
+          (currentDate.getFullYear() === weddingDate.getFullYear() &&
+            currentDate.getMonth() < weddingDate.getMonth())
+        ) {
           months++;
           currentDate.setMonth(currentDate.getMonth() + 1);
         }
@@ -52,10 +54,14 @@ export default function CountdownTimer() {
 
         // Calculate remaining time after months
         const remainingTime = weddingDate.getTime() - currentDate.getTime();
-        
+
         const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+        const hours = Math.floor(
+          (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor(
+          (remainingTime % (1000 * 60 * 60)) / (1000 * 60),
+        );
         const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
         return { months, days, hours, minutes, seconds };
@@ -104,15 +110,18 @@ export default function CountdownTimer() {
     );
   }
 
-  const isWeddingDay = timeLeft.months === 0 && timeLeft.days === 0 && 
-                      timeLeft.hours === 0 && timeLeft.minutes === 0 && 
-                      timeLeft.seconds === 0;
+  const isWeddingDay =
+    timeLeft.months === 0 &&
+    timeLeft.days === 0 &&
+    timeLeft.hours === 0 &&
+    timeLeft.minutes === 0 &&
+    timeLeft.seconds === 0;
 
   if (isWeddingDay) {
     return (
       <div className="countdown-timer">
         <div className="countdown-celebration">
-          <h3>🎉 It's Our Wedding Day! 🎉</h3>
+          <h3>🎉 It&apos;s Our Wedding Day! 🎉</h3>
         </div>
       </div>
     );
@@ -123,23 +132,33 @@ export default function CountdownTimer() {
       <div className="countdown-grid">
         <div className="countdown-item">
           <div className="countdown-number">{timeLeft.months}</div>
-          <div className="countdown-label">Month{timeLeft.months !== 1 ? 's' : ''}</div>
+          <div className="countdown-label">
+            Month{timeLeft.months !== 1 ? "s" : ""}
+          </div>
         </div>
         <div className="countdown-item">
           <div className="countdown-number">{timeLeft.days}</div>
-          <div className="countdown-label">Day{timeLeft.days !== 1 ? 's' : ''}</div>
+          <div className="countdown-label">
+            Day{timeLeft.days !== 1 ? "s" : ""}
+          </div>
         </div>
         <div className="countdown-item">
           <div className="countdown-number">{timeLeft.hours}</div>
-          <div className="countdown-label">Hour{timeLeft.hours !== 1 ? 's' : ''}</div>
+          <div className="countdown-label">
+            Hour{timeLeft.hours !== 1 ? "s" : ""}
+          </div>
         </div>
         <div className="countdown-item">
           <div className="countdown-number">{timeLeft.minutes}</div>
-          <div className="countdown-label">Minute{timeLeft.minutes !== 1 ? 's' : ''}</div>
+          <div className="countdown-label">
+            Minute{timeLeft.minutes !== 1 ? "s" : ""}
+          </div>
         </div>
         <div className="countdown-item">
           <div className="countdown-number">{timeLeft.seconds}</div>
-          <div className="countdown-label">Second{timeLeft.seconds !== 1 ? 's' : ''}</div>
+          <div className="countdown-label">
+            Second{timeLeft.seconds !== 1 ? "s" : ""}
+          </div>
         </div>
       </div>
     </div>

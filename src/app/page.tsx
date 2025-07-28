@@ -190,9 +190,9 @@ export default function Home() {
           <h1 className="hero-text">John & Emily</h1>
           <p className="hero-subtitle">are getting married!</p>
           <p className="hero-date">July 11, 2026 • Ann Arbor, Michigan</p>
-          
+
           <CountdownTimer />
-          
+
           <div className="hero-cta">
             <button
               className="btn-primary"
@@ -501,9 +501,7 @@ export default function Home() {
       </section>
 
       {/* Registry Section */}
-      <section
-        className="section"
-      >
+      <section className="section">
         <div className="container">
           <h2 className="section-title">Wedding Registry</h2>
           <p className="section-subtitle">

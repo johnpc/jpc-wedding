@@ -23,6 +23,7 @@ node scripts/setup-song-requests.js
 ```
 
 This script will:
+
 - Create a new Google Sheets spreadsheet titled "Wedding Song Requests"
 - Set up the appropriate column headers
 - Add the spreadsheet ID to your `.env.local` file
@@ -47,6 +48,7 @@ GOOGLE_SHEETS_SONG_REQUEST_SPREADSHEET_ID=your-song-request-spreadsheet-id
 ### Step 3: Test the Feature
 
 1. Start your development server:
+
    ```bash
    npm run dev > dev.log 2>&1 &
    ```
@@ -61,13 +63,13 @@ GOOGLE_SHEETS_SONG_REQUEST_SPREADSHEET_ID=your-song-request-spreadsheet-id
 
 The song request spreadsheet contains the following columns:
 
-| Column | Description | Required |
-|--------|-------------|----------|
-| Timestamp | When the request was submitted | Auto-generated |
-| Name | Guest's name | Yes |
-| Song Title | Name of the requested song | Yes |
-| Artist | Artist or band name | Yes |
-| Why This Song? | Why this song is special | No |
+| Column         | Description                    | Required       |
+| -------------- | ------------------------------ | -------------- |
+| Timestamp      | When the request was submitted | Auto-generated |
+| Name           | Guest's name                   | Yes            |
+| Song Title     | Name of the requested song     | Yes            |
+| Artist         | Artist or band name            | Yes            |
+| Why This Song? | Why this song is special       | No             |
 
 ## Managing Song Requests
 
@@ -86,6 +88,7 @@ The song request spreadsheet contains the following columns:
 ### Exporting Data
 
 You can export the song request data in various formats:
+
 - **CSV**: For importing into music software
 - **PDF**: For printing a physical list
 - **Excel**: For advanced sorting and filtering

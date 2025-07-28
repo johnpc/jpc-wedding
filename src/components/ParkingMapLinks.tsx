@@ -15,7 +15,7 @@ const ParkingMapLinks: React.FC<ParkingMapLinksProps> = ({
 
   const googleMapsUrl = `https://maps.google.com/?q=${encodedAddress}`;
   const appleMapsUrl = `https://maps.apple.com/?q=${encodedAddress}&address=${encodeURIComponent(
-    address
+    address,
   )}`;
 
   return (

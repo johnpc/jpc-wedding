@@ -5,13 +5,13 @@ import { NextRequest, NextResponse } from "next/server";
 const configureGoogleSheets = () => {
   const privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(
     /\\n/g,
-    "\n"
+    "\n",
   );
   const clientEmail = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
 
   if (!privateKey || !clientEmail) {
     throw new Error(
-      "Google Sheets API credentials not found in environment variables"
+      "Google Sheets API credentials not found in environment variables",
     );
   }
 
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     if (!firstName || !lastName || !email || !attending) {
       return NextResponse.json(
         { success: false, message: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -79,7 +79,7 @@ export async function POST(request: NextRequest) {
     // Return success response
     return NextResponse.json(
       { success: true, message: "RSVP submitted successfully!" },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error("Error submitting RSVP:", error);
@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
         success: false,
         message: "Error submitting RSVP. Please try again later.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

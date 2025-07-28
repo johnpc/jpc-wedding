@@ -22,8 +22,13 @@ html {
 body {
   color: var(--color-text);
   background: linear-gradient(to bottom, #fefefe, #f8f6f3);
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, sans-serif;
+  font-family:
+    var(--font-inter),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -137,7 +142,9 @@ h6 {
   padding: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 999;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   transform: translateY(-20px);
   opacity: 0;
   pointer-events: none;
@@ -184,7 +191,8 @@ h6 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80");
   background-size: cover;
   background-position: center;
@@ -303,7 +311,9 @@ h6 {
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: var(--shadow-light);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   height: 100%;
 }
 
@@ -635,7 +645,9 @@ h6 {
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .fade-in.visible {
@@ -685,7 +697,9 @@ h6 {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .countdown-item:hover {
@@ -742,15 +756,15 @@ h6 {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.8rem;
   }
-  
+
   .countdown-item {
     padding: 0.8rem;
   }
-  
+
   .countdown-number {
     font-size: 2rem;
   }
-  
+
   .countdown-label {
     font-size: 0.8rem;
   }
@@ -761,31 +775,31 @@ h6 {
     padding: 1.5rem;
     margin: 1.5rem 0;
   }
-  
+
   .countdown-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.6rem;
   }
-  
+
   /* Center the last item (seconds) when it's alone in the row */
   .countdown-item:nth-child(5) {
     grid-column: 1 / -1;
     max-width: 50%;
     margin: 0 auto;
   }
-  
+
   .countdown-item {
     padding: 0.6rem;
   }
-  
+
   .countdown-number {
     font-size: 1.8rem;
   }
-  
+
   .countdown-label {
     font-size: 0.7rem;
   }
-  
+
   .countdown-celebration h3 {
     font-size: 1.5rem;
   }

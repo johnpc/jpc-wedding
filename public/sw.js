@@ -12,20 +12,23 @@ self.addEventListener("install", (event) => {
 // Activate event - clean up any existing caches and take control immediately
 self.addEventListener("activate", (event) => {
   console.log("Service Worker: Activate event");
-  
+
   event.waitUntil(
     // Clear all existing caches to ensure fresh content
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          console.log("Service Worker: Deleting cache", cacheName);
-          return caches.delete(cacheName);
-        })
-      );
-    }).then(() => {
-      // Take control of all clients immediately
-      return self.clients.claim();
-    })
+    caches
+      .keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            console.log("Service Worker: Deleting cache", cacheName);
+            return caches.delete(cacheName);
+          }),
+        );
+      })
+      .then(() => {
+        // Take control of all clients immediately
+        return self.clients.claim();
+      }),
   );
 });
 
@@ -38,7 +41,7 @@ self.addEventListener("fetch", (event) => {
       // If network fails, we don't have a cache fallback
       // This ensures users see network errors rather than stale content
       throw error;
-    })
+    }),
   );
 });
 

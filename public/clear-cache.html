@@ -1,166 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Clear Cache - John & Emily's Wedding</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        .container {
-            background: #f9f9f9;
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-        }
-        h1 {
-            color: #8B5A3C;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .button {
-            background: #8B5A3C;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin: 10px 5px;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .button:hover {
-            background: #6d4530;
-        }
-        .status {
-            margin: 20px 0;
-            padding: 15px;
-            border-radius: 5px;
-            display: none;
-        }
-        .success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        .info {
-            background: #d1ecf1;
-            color: #0c5460;
-            border: 1px solid #bee5eb;
-        }
-        .instructions {
-            background: #fff3cd;
-            color: #856404;
-            border: 1px solid #ffeaa7;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .back-link {
-            text-align: center;
-            margin-top: 30px;
-        }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      .container {
+        background: #f9f9f9;
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+      }
+      h1 {
+        color: #8b5a3c;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .button {
+        background: #8b5a3c;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 10px 5px;
+        display: inline-block;
+        text-decoration: none;
+      }
+      .button:hover {
+        background: #6d4530;
+      }
+      .status {
+        margin: 20px 0;
+        padding: 15px;
+        border-radius: 5px;
+        display: none;
+      }
+      .success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+      .info {
+        background: #d1ecf1;
+        color: #0c5460;
+        border: 1px solid #bee5eb;
+      }
+      .instructions {
+        background: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeaa7;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+      .back-link {
+        text-align: center;
+        margin-top: 30px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>🔄 Clear Website Cache</h1>
-        
-        <p>If you're not seeing the latest updates to our wedding website, this page will help clear your browser's cache and ensure you get the most recent version.</p>
-        
-        <div class="instructions">
-            <strong>Why might you need this?</strong><br>
-            Sometimes browsers store old versions of websites to make them load faster. This can prevent you from seeing new features like our song request form or updated wedding details.
-        </div>
+      <h1>🔄 Clear Website Cache</h1>
 
-        <div style="text-align: center; margin: 30px 0;">
-            <button class="button" onclick="clearServiceWorker()">Clear Service Worker</button>
-            <button class="button" onclick="clearAllCaches()">Clear All Caches</button>
-            <button class="button" onclick="hardRefresh()">Hard Refresh</button>
-        </div>
+      <p>
+        If you're not seeing the latest updates to our wedding website, this
+        page will help clear your browser's cache and ensure you get the most
+        recent version.
+      </p>
 
-        <div id="status" class="status"></div>
+      <div class="instructions">
+        <strong>Why might you need this?</strong><br />
+        Sometimes browsers store old versions of websites to make them load
+        faster. This can prevent you from seeing new features like our song
+        request form or updated wedding details.
+      </div>
 
-        <div class="instructions">
-            <strong>Manual Steps (if needed):</strong><br>
-            1. <strong>Chrome/Edge:</strong> Press Ctrl+Shift+R (Windows) or Cmd+Shift+R (Mac)<br>
-            2. <strong>Firefox:</strong> Press Ctrl+F5 (Windows) or Cmd+Shift+R (Mac)<br>
-            3. <strong>Safari:</strong> Press Cmd+Option+R<br>
-            4. Or go to your browser settings and clear browsing data/cache
-        </div>
+      <div style="text-align: center; margin: 30px 0">
+        <button class="button" onclick="clearServiceWorker()">
+          Clear Service Worker
+        </button>
+        <button class="button" onclick="clearAllCaches()">
+          Clear All Caches
+        </button>
+        <button class="button" onclick="hardRefresh()">Hard Refresh</button>
+      </div>
 
-        <div class="back-link">
-            <a href="/" class="button">← Back to Wedding Website</a>
-        </div>
+      <div id="status" class="status"></div>
+
+      <div class="instructions">
+        <strong>Manual Steps (if needed):</strong><br />
+        1. <strong>Chrome/Edge:</strong> Press Ctrl+Shift+R (Windows) or
+        Cmd+Shift+R (Mac)<br />
+        2. <strong>Firefox:</strong> Press Ctrl+F5 (Windows) or Cmd+Shift+R
+        (Mac)<br />
+        3. <strong>Safari:</strong> Press Cmd+Option+R<br />
+        4. Or go to your browser settings and clear browsing data/cache
+      </div>
+
+      <div class="back-link">
+        <a href="/" class="button">← Back to Wedding Website</a>
+      </div>
     </div>
 
     <script>
-        function showStatus(message, type = 'info') {
-            const status = document.getElementById('status');
-            status.className = `status ${type}`;
-            status.innerHTML = message;
-            status.style.display = 'block';
-        }
+      function showStatus(message, type = "info") {
+        const status = document.getElementById("status");
+        status.className = `status ${type}`;
+        status.innerHTML = message;
+        status.style.display = "block";
+      }
 
-        async function clearServiceWorker() {
-            if ('serviceWorker' in navigator) {
-                try {
-                    const registrations = await navigator.serviceWorker.getRegistrations();
-                    for (let registration of registrations) {
-                        await registration.unregister();
-                    }
-                    showStatus('✅ Service worker cleared successfully!', 'success');
-                } catch (error) {
-                    showStatus('❌ Error clearing service worker: ' + error.message, 'info');
-                }
-            } else {
-                showStatus('ℹ️ Service workers not supported in this browser.', 'info');
+      async function clearServiceWorker() {
+        if ("serviceWorker" in navigator) {
+          try {
+            const registrations =
+              await navigator.serviceWorker.getRegistrations();
+            for (let registration of registrations) {
+              await registration.unregister();
             }
+            showStatus("✅ Service worker cleared successfully!", "success");
+          } catch (error) {
+            showStatus(
+              "❌ Error clearing service worker: " + error.message,
+              "info",
+            );
+          }
+        } else {
+          showStatus(
+            "ℹ️ Service workers not supported in this browser.",
+            "info",
+          );
+        }
+      }
+
+      async function clearAllCaches() {
+        if ("caches" in window) {
+          try {
+            const cacheNames = await caches.keys();
+            await Promise.all(
+              cacheNames.map((cacheName) => caches.delete(cacheName)),
+            );
+            showStatus(
+              `✅ Cleared ${cacheNames.length} cache(s) successfully!`,
+              "success",
+            );
+          } catch (error) {
+            showStatus("❌ Error clearing caches: " + error.message, "info");
+          }
+        } else {
+          showStatus("ℹ️ Cache API not supported in this browser.", "info");
+        }
+      }
+
+      function hardRefresh() {
+        showStatus("🔄 Performing hard refresh...", "info");
+        // Clear session storage
+        if (typeof Storage !== "undefined") {
+          sessionStorage.clear();
+          localStorage.clear();
         }
 
-        async function clearAllCaches() {
-            if ('caches' in window) {
-                try {
-                    const cacheNames = await caches.keys();
-                    await Promise.all(
-                        cacheNames.map(cacheName => caches.delete(cacheName))
-                    );
-                    showStatus(`✅ Cleared ${cacheNames.length} cache(s) successfully!`, 'success');
-                } catch (error) {
-                    showStatus('❌ Error clearing caches: ' + error.message, 'info');
-                }
-            } else {
-                showStatus('ℹ️ Cache API not supported in this browser.', 'info');
-            }
-        }
+        // Hard refresh the page
+        setTimeout(() => {
+          window.location.reload(true);
+        }, 1000);
+      }
 
-        function hardRefresh() {
-            showStatus('🔄 Performing hard refresh...', 'info');
-            // Clear session storage
-            if (typeof(Storage) !== "undefined") {
-                sessionStorage.clear();
-                localStorage.clear();
-            }
-            
-            // Hard refresh the page
-            setTimeout(() => {
-                window.location.reload(true);
-            }, 1000);
-        }
-
-        // Auto-clear on page load
-        window.addEventListener('load', async () => {
-            await clearServiceWorker();
-            await clearAllCaches();
-            showStatus('🎉 Cache cleared! The website should now show the latest version.', 'success');
-        });
+      // Auto-clear on page load
+      window.addEventListener("load", async () => {
+        await clearServiceWorker();
+        await clearAllCaches();
+        showStatus(
+          "🎉 Cache cleared! The website should now show the latest version.",
+          "success",
+        );
+      });
     </script>
-</body>
+  </body>
 </html>

@@ -12,12 +12,12 @@ const CalendarLinks = () => {
 
   // Google Calendar link
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-    eventTitle
+    eventTitle,
   )}&dates=${startDate.replace(/[-:]/g, "")}/${endDate.replace(
     /[-:]/g,
-    ""
+    "",
   )}&details=${encodeURIComponent(
-    eventDescription
+    eventDescription,
   )}&location=${encodeURIComponent(eventLocation)}`;
 
   // Apple Calendar link (ics file)

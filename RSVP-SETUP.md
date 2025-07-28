@@ -58,7 +58,6 @@ Visit your website and test the RSVP form. Submissions should appear in your Goo
 When deploying your website, make sure to add these environment variables to your deployment platform:
 
 - For Vercel:
-
   - Go to your project settings
   - Navigate to the "Environment Variables" section
   - Add each variable from your `.env.local` file

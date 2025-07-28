@@ -7,7 +7,7 @@ export function registerServiceWorker() {
         .then((registration) => {
           console.log(
             "ServiceWorker registration successful with scope: ",
-            registration.scope
+            registration.scope,
           );
 
           // Check for updates every time the page loads
@@ -18,13 +18,20 @@ export function registerServiceWorker() {
             const newWorker = registration.installing;
             if (newWorker) {
               newWorker.addEventListener("statechange", () => {
-                if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+                if (
+                  newWorker.state === "installed" &&
+                  navigator.serviceWorker.controller
+                ) {
                   // New service worker is available
                   console.log("New service worker available");
-                  
+
                   // Optionally, you could show a notification to the user here
                   // For now, we'll just reload the page to get the latest version
-                  if (confirm("A new version of the website is available. Reload to get the latest updates?")) {
+                  if (
+                    confirm(
+                      "A new version of the website is available. Reload to get the latest updates?",
+                    )
+                  ) {
                     window.location.reload();
                   }
                 }
@@ -40,7 +47,10 @@ export function registerServiceWorker() {
       if ("caches" in window) {
         caches.keys().then((cacheNames) => {
           cacheNames.forEach((cacheName) => {
-            if (cacheName.includes("je-wedding") || cacheName.includes("wedding")) {
+            if (
+              cacheName.includes("je-wedding") ||
+              cacheName.includes("wedding")
+            ) {
               console.log("Clearing old cache:", cacheName);
               caches.delete(cacheName);
             }

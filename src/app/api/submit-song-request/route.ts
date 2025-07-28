@@ -5,13 +5,13 @@ import { NextRequest, NextResponse } from "next/server";
 const configureGoogleSheets = () => {
   const privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(
     /\\n/g,
-    "\n"
+    "\n",
   );
   const clientEmail = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
 
   if (!privateKey || !clientEmail) {
     throw new Error(
-      "Google Sheets API credentials not found in environment variables"
+      "Google Sheets API credentials not found in environment variables",
     );
   }
 
@@ -33,8 +33,12 @@ export async function POST(request: NextRequest) {
     const { name, songTitle, artist } = body;
     if (!name || !songTitle || !artist) {
       return NextResponse.json(
-        { success: false, message: "Missing required fields (name, song title, and artist are required)" },
-        { status: 400 }
+        {
+          success: false,
+          message:
+            "Missing required fields (name, song title, and artist are required)",
+        },
+        { status: 400 },
       );
     }
 
@@ -47,7 +51,9 @@ export async function POST(request: NextRequest) {
     // Get spreadsheet ID for song requests
     const spreadsheetId = process.env.GOOGLE_SHEETS_SONG_REQUEST_SPREADSHEET_ID;
     if (!spreadsheetId) {
-      throw new Error("Song request spreadsheet ID not found in environment variables");
+      throw new Error(
+        "Song request spreadsheet ID not found in environment variables",
+      );
     }
 
     // Initialize Google Sheets API
@@ -59,22 +65,14 @@ export async function POST(request: NextRequest) {
       range: "Sheet1!A:E", // Updated range for 5 columns
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [
-          [
-            date,
-            name,
-            songTitle,
-            artist,
-            message,
-          ],
-        ],
+        values: [[date, name, songTitle, artist, message]],
       },
     });
 
     // Return success response
     return NextResponse.json(
       { success: true, message: "Song request submitted successfully!" },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error("Error submitting song request:", error);
@@ -85,7 +83,7 @@ export async function POST(request: NextRequest) {
         success: false,
         message: "Error submitting song request. Please try again later.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

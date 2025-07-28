@@ -25,7 +25,7 @@ export default function RsvpForm() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormState((prev) => ({ ...prev, [name]: value }));
@@ -68,14 +68,14 @@ export default function RsvpForm() {
         // API error
         setSubmitStatus("error");
         setErrorMessage(
-          data.message || "Something went wrong. Please try again."
+          data.message || "Something went wrong. Please try again.",
         );
       }
     } catch {
       // Network error
       setSubmitStatus("error");
       setErrorMessage(
-        "Network error. Please check your connection and try again."
+        "Network error. Please check your connection and try again.",
       );
     } finally {
       setIsSubmitting(false);
