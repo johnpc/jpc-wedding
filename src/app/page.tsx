@@ -5,6 +5,7 @@ import { registerServiceWorker } from "./sw-register";
 import Image from "next/image";
 import RsvpForm from "./components/RsvpForm";
 import SongRequestForm from "./components/SongRequestForm";
+import CountdownTimer from "./components/CountdownTimer";
 import MapLinks from "../components/MapLinks";
 import CalendarLinks from "../components/CalendarLinks";
 import ParkingMapLinks from "../components/ParkingMapLinks";
@@ -189,6 +190,9 @@ export default function Home() {
           <h1 className="hero-text">John & Emily</h1>
           <p className="hero-subtitle">are getting married!</p>
           <p className="hero-date">July 11, 2026 • Ann Arbor, Michigan</p>
+          
+          <CountdownTimer />
+          
           <div className="hero-cta">
             <button
               className="btn-primary"
