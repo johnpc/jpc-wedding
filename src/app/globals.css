@@ -1,12 +1,12 @@
 :root {
-  --color-primary: #8b5a3c;
-  --color-secondary: #d4b5a0;
-  --color-accent: #f5e6d3;
-  --color-text: #2c1810;
-  --color-text-light: #6b5b73;
+  --color-primary: #60a5fa;
+  --color-secondary: #bfdbfe;
+  --color-accent: #f0f9ff;
+  --color-text: #1f2937;
+  --color-text-light: #6b7280;
   --color-white: #ffffff;
-  --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --shadow-light: 0 4px 20px rgba(96, 165, 250, 0.15);
+  --shadow-medium: 0 8px 30px rgba(96, 165, 250, 0.25);
 }
 
 * {
@@ -21,7 +21,7 @@ html {
 
 body {
   color: var(--color-text);
-  background: linear-gradient(to bottom, #fefefe, #f8f6f3);
+  background: linear-gradient(to bottom, #fefffe, #f0f9ff);
   font-family:
     var(--font-inter),
     -apple-system,
@@ -192,8 +192,8 @@ h6 {
   justify-content: center;
   text-align: center;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80");
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/couple-photo-3.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

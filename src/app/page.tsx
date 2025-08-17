@@ -226,7 +226,7 @@ export default function Home() {
               </p>
             </div>
             <Image
-              src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              src="/john-emily-together.jpeg"
               alt="John and Emily together"
               className="about-image"
               width={800}
@@ -236,7 +236,7 @@ export default function Home() {
 
           <div className="about-content">
             <Image
-              src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              src="/engagement-photo.jpeg"
               alt="Engagement photo"
               className="about-image"
               width={800}
@@ -414,7 +414,7 @@ export default function Home() {
           <div className="gallery-grid">
             <div className="gallery-item">
               <Image
-                src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                src="/john-emily-together.jpeg"
                 alt="John and Emily memory 1"
                 className="gallery-image"
                 width={500}
@@ -423,7 +423,7 @@ export default function Home() {
             </div>
             <div className="gallery-item">
               <Image
-                src="https://images.unsplash.com/photo-1529636798458-92182e662485?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                src="/engagement-photo.jpeg"
                 alt="John and Emily memory 2"
                 className="gallery-image"
                 width={500}
@@ -432,7 +432,7 @@ export default function Home() {
             </div>
             <div className="gallery-item">
               <Image
-                src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                src="/couple-photo-3.jpeg"
                 alt="John and Emily memory 3"
                 className="gallery-image"
                 width={500}
@@ -441,26 +441,8 @@ export default function Home() {
             </div>
             <div className="gallery-item">
               <Image
-                src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                src="/couple-photo-4.jpeg"
                 alt="John and Emily memory 4"
-                className="gallery-image"
-                width={500}
-                height={500}
-              />
-            </div>
-            <div className="gallery-item">
-              <Image
-                src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="John and Emily memory 5"
-                className="gallery-image"
-                width={500}
-                height={500}
-              />
-            </div>
-            <div className="gallery-item">
-              <Image
-                src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                alt="John and Emily memory 6"
                 className="gallery-image"
                 width={500}
                 height={500}
@@ -579,14 +561,6 @@ export default function Home() {
             Thank you for being part of our love story. We can&apos;t wait to
             celebrate with you!
           </p>
-          <div className="footer-social">
-            <a href="#" className="social-link">
-              📧
-            </a>
-            <a href="#" className="social-link">
-              📱
-            </a>
-          </div>
           <p style={{ opacity: 0.7, fontSize: "0.9rem" }}>
             July 11, 2026 • Ann Arbor, Michigan
           </p>
