@@ -260,7 +260,7 @@ export default function Home() {
       <section
         id="details"
         className="section"
-        style={{ background: "var(--color-accent)" }}
+        style={{ background: "var(--color-primary)" }}
       >
         <div className="container">
           <h2 className="section-title">Wedding Details</h2>
@@ -308,7 +308,6 @@ export default function Home() {
               <div className="detail-icon">📸</div>
               <h3 className="detail-title">Photo Sharing</h3>
               <div className="detail-info">
-                <p>Share your photos from our special day!</p>
                 <p style={{ marginBottom: "1rem" }}>
                   Upload and view photos from the wedding.
                 </p>
@@ -331,7 +330,6 @@ export default function Home() {
                   <strong>Semi-Formal</strong>
                 </p>
                 <p>Cocktail attire encouraged</p>
-                <p>Colors: Earth tones preferred</p>
               </div>
             </div>
           </div>
@@ -404,7 +402,7 @@ export default function Home() {
       <section
         id="gallery"
         className="section"
-        style={{ background: "var(--color-accent)" }}
+        style={{ background: "var(--color-sage)" }}
       >
         <div className="container">
           <h2 className="section-title">Our Journey</h2>
@@ -469,7 +467,7 @@ export default function Home() {
       <section
         id="song-requests"
         className="section"
-        style={{ background: "var(--color-accent)" }}
+        style={{ background: "var(--color-peach)" }}
       >
         <div className="container">
           <h2 className="section-title">Song Requests</h2>
@@ -482,71 +480,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Registry Section */}
+      {/* Vacation Fund Section */}
       <section className="section">
         <div className="container">
-          <h2 className="section-title">Wedding Registry</h2>
+          <h2 className="section-title">Santorini Vacation Fund</h2>
           <p className="section-subtitle">
             Your presence is the greatest gift, but if you&apos;d like to
-            celebrate with a gift, we&apos;ve registered at a few of our
-            favorite places.
+            celebrate with us, help us fund our dream honeymoon to Santorini!
           </p>
 
-          <div className="grid grid-3">
-            <div className="card" style={{ textAlign: "center" }}>
-              <h3
-                style={{ marginBottom: "1rem", color: "var(--color-primary)" }}
-              >
-                Target
-              </h3>
-              <p
-                style={{
-                  marginBottom: "2rem",
-                  color: "var(--color-text-light)",
-                }}
-              >
-                Home essentials and everyday items
-              </p>
-              <a href="#" className="btn-primary">
-                View Registry
-              </a>
-            </div>
+          <div style={{ alignItems: "center", gap: "3rem", marginBottom: "3rem", }}>
+            <center>
+            <div style={{  minWidth: "300px" }}>
+                          <h3 style={{ fontSize: "2rem", marginBottom: "2rem", color: "var(--color-primary)", textAlign: "center" }}>
+              This Could Be Us! 💙
+            </h3>
+              <Image
+                src="/santorini-vacation-fund.png"
+                alt="Beautiful Santorini view"
+                width={400}
+                height={400}
+                style={{ borderRadius: "1rem", boxShadow: "var(--shadow-medium)", objectFit: "cover" }}
+              />
 
-            <div className="card" style={{ textAlign: "center" }}>
-              <h3
-                style={{ marginBottom: "1rem", color: "var(--color-primary)" }}
-              >
-                Williams Sonoma
-              </h3>
-              <p
-                style={{
-                  marginBottom: "2rem",
-                  color: "var(--color-text-light)",
-                }}
-              >
-                Kitchen and cooking essentials
-              </p>
-              <a href="#" className="btn-primary">
-                View Registry
-              </a>
             </div>
-
-            <div className="card" style={{ textAlign: "center" }}>
-              <h3
-                style={{ marginBottom: "1rem", color: "var(--color-primary)" }}
-              >
-                Honeymoon Fund
-              </h3>
-              <p
-                style={{
-                  marginBottom: "2rem",
-                  color: "var(--color-text-light)",
-                }}
-              >
-                Help us create memories on our honeymoon
-              </p>
-              <a href="#" className="btn-primary">
-                Contribute
+            </center>
+            <div style={{ minWidth: "300px", textAlign: "center" }}>
+              <a href="#" className="btn-primary" style={{ fontSize: "1.1rem", padding: "1rem 2rem" }}>
+                Donate to Santorini Fund
               </a>
             </div>
           </div>

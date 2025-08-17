@@ -80,7 +80,7 @@ const ParkingMapLinks: React.FC<ParkingMapLinksProps> = ({
           color: white;
         }
         .apple-maps {
-          background-color: var(--color-secondary);
+          background-color: var(--color-sage);
           color: white;
         }
       `}</style>

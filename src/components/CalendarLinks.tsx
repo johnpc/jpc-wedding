@@ -98,7 +98,7 @@ const CalendarLinks = () => {
           color: white;
         }
         .apple-calendar {
-          background-color: var(--color-secondary);
+          background-color: var(--color-sage);
           color: white;
         }
 
