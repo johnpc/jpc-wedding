@@ -218,15 +218,17 @@ export default function Home() {
             <div className="about-text">
               <h3>How We Met</h3>
               <p>
-                Our love story began in the most unexpected way. What started as
-                a chance encounter has blossomed into a beautiful journey of
-                love, laughter, and endless adventures. We&apos;ve shared
-                countless memories, supported each other through life&apos;s ups
-                and downs, and discovered that we&apos;re truly better together.
+                We grew up in the same town and ran in the same circles in high 
+                school, but didn&apos;t reconnect until after college when Emily 
+                moved to Ann Arbor. What started as catching up over coffee has 
+                blossomed into a beautiful journey of love, laughter, and endless 
+                adventures. We&apos;ve shared countless memories, supported each 
+                other through life&apos;s ups and downs, and discovered that 
+                we&apos;re truly better together.
               </p>
             </div>
             <Image
-              src="/john-emily-together.jpeg"
+              src="/how-we-met-photo.jpeg"
               alt="John and Emily together"
               className="about-image"
               width={800}
@@ -246,10 +248,13 @@ export default function Home() {
               <h3>The Proposal</h3>
               <p>
                 After years of building our life together, John knew it was time
-                to take the next step. On a beautiful evening surrounded by the
-                places and people we love most, he got down on one knee and
-                asked Emily to be his wife. Of course, she said yes! Now we
-                can&apos;t wait to celebrate this next chapter with all of you.
+                to take the next step. He planned the perfect proposal in Iceland,
+                hoping to pop the question under the magical northern lights. But
+                when the moment came, he fumbled the opportunity! Not to be deterred,
+                John found an even more spectacular setting at one of Iceland&apos;s
+                magnificent waterfalls and asked Emily to be his wife. Of course,
+                she said yes! Now we can&apos;t wait to celebrate this next chapter
+                with all of you.
               </p>
             </div>
           </div>
