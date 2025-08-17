@@ -39,7 +39,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Get other optional fields
-    const guests = body.guests || "1";
     const dietary = body.dietary || "";
     const message = body.message || "";
 
@@ -68,7 +67,6 @@ export async function POST(request: NextRequest) {
             lastName,
             email,
             attending,
-            guests,
             dietary,
             message,
           ],

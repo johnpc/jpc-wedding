@@ -9,7 +9,6 @@ export default function RsvpForm() {
     lastName: "",
     email: "",
     attending: "",
-    guests: "1",
     dietary: "",
     message: "",
   });
@@ -60,7 +59,6 @@ export default function RsvpForm() {
           lastName: "",
           email: "",
           attending: "",
-          guests: "1",
           dietary: "",
           message: "",
         });
@@ -186,21 +184,18 @@ export default function RsvpForm() {
               </select>
             </div>
             <div className="form-group">
-              <label className="form-label" htmlFor="guests">
-                Number of Guests
-              </label>
-              <select
-                id="guests"
-                name="guests"
-                className="form-select"
-                value={formState.guests}
-                onChange={handleChange}
-              >
-                <option value="1">Just me</option>
-                <option value="2">2 people</option>
-                <option value="3">3 people</option>
-                <option value="4">4 people</option>
-              </select>
+              <p style={{
+                background: "var(--color-accent)",
+                padding: "1rem",
+                borderRadius: "0.5rem",
+                margin: "1rem 0",
+                color: "var(--color-text)",
+                fontSize: "0.9rem",
+                border: "1px solid var(--color-primary)"
+              }}>
+                <strong>Note:</strong> Please submit this form once per person on the invitation.
+                If you&apos;re bringing a guest or children, this means you will have to submit the form multiple times.
+              </p>
             </div>
           </div>
 
