@@ -70,6 +70,15 @@ export default function Home() {
             </li>
             <li>
               <a
+                href="#hotels"
+                className="nav-link"
+                onClick={() => scrollToSection("hotels")}
+              >
+                Hotels
+              </a>
+            </li>
+            <li>
+              <a
                 href="#schedule"
                 className="nav-link"
                 onClick={() => scrollToSection("schedule")}
@@ -143,6 +152,15 @@ export default function Home() {
               onClick={() => scrollToSection("details")}
             >
               Details
+            </a>
+          </li>
+          <li className="mobile-menu-item">
+            <a
+              href="#hotels"
+              className="mobile-menu-link"
+              onClick={() => scrollToSection("hotels")}
+            >
+              Hotels
             </a>
           </li>
           <li className="mobile-menu-item">
@@ -335,6 +353,74 @@ export default function Home() {
                   <strong>Semi-Formal</strong>
                 </p>
                 <p>Cocktail attire encouraged</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hotel Recommendations */}
+      <section id="hotels" className="section">
+        <div className="container">
+          <h2 className="section-title">Where to Stay</h2>
+          <p className="section-subtitle">
+            Recommended hotels for out-of-town guests
+          </p>
+          <div className="details-grid">
+            <div className="detail-card card">
+              <div className="detail-icon">🏨</div>
+              <h3 className="detail-title">The Graduate Ann Arbor</h3>
+              <div className="detail-info">
+                <p style={{ marginBottom: "0.5rem" }}>
+                  <strong>Walking distance to venue</strong>
+                </p>
+                <p style={{ marginBottom: "1rem", fontSize: "0.9rem" }}>
+                  615 E Huron St, Ann Arbor, MI 48104
+                </p>
+                <a
+                  href="https://www.graduatehotels.com/ann-arbor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                  style={{ fontSize: "0.9rem" }}
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
+
+            <div className="detail-card card">
+              <div className="detail-icon">🏨</div>
+              <h3 className="detail-title">Wyndham Garden Ann Arbor</h3>
+              <div className="detail-info">
+                <p style={{ marginBottom: "0.5rem" }}>
+                  <strong>Near freeway access</strong>
+                </p>
+                <p style={{ marginBottom: "1rem", fontSize: "0.9rem" }}>
+                  2900 Jackson Ave, Ann Arbor, MI 48103
+                </p>
+                <a
+                  href="https://www.wyndhamhotels.com/wyndham-garden/ann-arbor-michigan/wyndham-garden-ann-arbor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                  style={{ fontSize: "0.9rem" }}
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
+
+            <div className="detail-card card" style={{ opacity: 0.6 }}>
+              <div className="detail-icon">⚠️</div>
+              <h3 className="detail-title">Not Recommended</h3>
+              <div className="detail-info">
+                <p style={{ marginBottom: "0.5rem" }}>
+                  <strong>Embassy Hotel</strong>
+                </p>
+                <p style={{ fontSize: "0.9rem" }}>
+                  May seem like a good deal, but we strongly advise against staying here.
+                </p>
               </div>
             </div>
           </div>
