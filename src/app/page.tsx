@@ -597,7 +597,7 @@ export default function Home() {
             </div>
             </center>
             <div style={{ minWidth: "300px", textAlign: "center" }}>
-              <a href="#" className="btn-primary" style={{ fontSize: "1.1rem", padding: "1rem 2rem" }}>
+              <a href="https://fundraise.jpc.io/goal/303574f2-155d-4202-81c6-e710fc78173b" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: "1.1rem", padding: "1rem 2rem" }}>
                 Donate to Santorini Fund
               </a>
             </div>
