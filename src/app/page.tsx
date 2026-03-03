@@ -359,6 +359,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Construction Notice */}
+      <section id="construction" className="section">
+        <div className="container">
+          <h2 className="section-title">Construction Notice</h2>
+<div
+            style={{
+              maxWidth: "600px",
+              margin: "0 auto",
+              textAlign: "center",
+            }}
+          >
+            <p style={{ marginBottom: "1.5rem", fontSize: "1.1rem" }}>
+              There is ongoing construction near the venue. The venue is fully
+              accessible by car, but please{" "}
+              <strong>approach from Liberty St.</strong> rather than Washington
+              St.
+            </p>
+            <Image
+              src="/construction-map.png"
+              alt="Map showing construction area near venue"
+              width={600}
+              height={480}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "12px",
+                boxShadow: "var(--shadow-medium)",
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Hotel Recommendations */}
       <section id="hotels" className="section">
         <div className="container">
