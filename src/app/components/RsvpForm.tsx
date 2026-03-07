@@ -194,7 +194,6 @@ export default function RsvpForm() {
                 border: "1px solid var(--color-primary)"
               }}>
                 <strong>Note:</strong> Please submit this form once per person on the invitation.
-                If you&apos;re bringing a guest or children, this means you will have to submit the form multiple times.
               </p>
             </div>
           </div>

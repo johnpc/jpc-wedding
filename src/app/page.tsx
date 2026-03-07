@@ -444,6 +444,28 @@ export default function Home() {
               </div>
             </div>
 
+            <div className="detail-card card">
+              <div className="detail-icon">🏨</div>
+              <h3 className="detail-title">AC Hotel Ann Arbor Downtown</h3>
+              <div className="detail-info">
+                <p style={{ marginBottom: "0.5rem" }}>
+                  <strong>Downtown location</strong>
+                </p>
+                <p style={{ marginBottom: "1rem", fontSize: "0.9rem" }}>
+                  401 E Washington St, Ann Arbor, MI 48104
+                </p>
+                <a
+                  href="https://www.marriott.com/en-us/hotels/arbac-ac-hotel-ann-arbor-downtown/overview/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                  style={{ fontSize: "0.9rem" }}
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
+
             <div className="detail-card card" style={{ opacity: 0.6 }}>
               <div className="detail-icon">⚠️</div>
               <h3 className="detail-title">Not Recommended</h3>
@@ -487,8 +509,7 @@ export default function Home() {
               <div className="timeline-time">4:30 PM</div>
               <div className="timeline-title">Cocktail Hour</div>
               <div className="timeline-description">
-                Enjoy drinks and appetizers while we take photos. Mingle with
-                other guests!
+                Enjoy drinks while we take photos. Mingle with other guests!
               </div>
             </div>
 
