@@ -193,7 +193,7 @@ export default function RsvpForm() {
                 fontSize: "0.9rem",
                 border: "1px solid var(--color-primary)"
               }}>
-                <strong>Note:</strong> Please submit this form once per person on the invitation.
+                <strong>Note:</strong> Due to limited space, we cannot accommodate guests who are not named directly on your invitation. Please submit this form once for each person named on your invitation (you may need to submit multiple times).
               </p>
             </div>
           </div>
