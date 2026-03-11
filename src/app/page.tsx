@@ -645,7 +645,7 @@ export default function Home() {
                 alt="Beautiful Santorini view"
                 width={400}
                 height={400}
-                style={{ borderRadius: "1rem", boxShadow: "var(--shadow-medium)", objectFit: "cover" }}
+                style={{ borderRadius: "1rem", boxShadow: "var(--shadow-medium)", objectFit: "cover", maxWidth: "100%", height: "auto" }}
               />
 
             </div>
