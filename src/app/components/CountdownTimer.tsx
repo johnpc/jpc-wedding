@@ -32,28 +32,24 @@ export default function CountdownTimer() {
       const difference = weddingDate.getTime() - now.getTime();
 
       if (difference > 0) {
-        // Calculate months and remaining days
-        const currentDate = new Date(now);
+        // Calculate months by counting forward from now
         let months = 0;
+        const tempDate = new Date(now);
 
-        // Count full months
-        while (
-          currentDate.getFullYear() < weddingDate.getFullYear() ||
-          (currentDate.getFullYear() === weddingDate.getFullYear() &&
-            currentDate.getMonth() < weddingDate.getMonth())
-        ) {
-          months++;
-          currentDate.setMonth(currentDate.getMonth() + 1);
+        // Count full months until we'd overshoot the wedding date
+        while (true) {
+          const nextMonth = new Date(tempDate);
+          nextMonth.setMonth(nextMonth.getMonth() + 1);
+          if (nextMonth.getTime() <= weddingDate.getTime()) {
+            months++;
+            tempDate.setMonth(tempDate.getMonth() + 1);
+          } else {
+            break;
+          }
         }
 
-        // If we've gone past the wedding day in the final month, subtract one month
-        if (currentDate.getDate() > weddingDate.getDate()) {
-          months--;
-          currentDate.setMonth(currentDate.getMonth() - 1);
-        }
-
-        // Calculate remaining time after months
-        const remainingTime = weddingDate.getTime() - currentDate.getTime();
+        // Calculate remaining time after full months
+        const remainingTime = weddingDate.getTime() - tempDate.getTime();
 
         const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
