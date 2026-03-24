@@ -79,6 +79,7 @@ const CalendarLinks = () => {
           flex-direction: column;
           gap: 0.5rem;
           margin-top: 1rem;
+          align-items: center;
         }
         .calendar-button {
           padding: 0.5rem 1rem;
@@ -105,6 +106,8 @@ const CalendarLinks = () => {
         @media (min-width: 768px) {
           .calendar-buttons {
             flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
           }
         }
       `}</style>

@@ -440,6 +440,15 @@ h6 {
 
 .detail-card {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .detail-icon {
@@ -452,11 +461,6 @@ h6 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--color-primary);
-}
-
-.detail-info {
-  color: var(--color-text-light);
-  line-height: 1.6;
 }
 
 /* RSVP Form */

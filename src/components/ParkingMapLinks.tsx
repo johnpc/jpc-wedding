@@ -60,8 +60,10 @@ const ParkingMapLinks: React.FC<ParkingMapLinksProps> = ({
         }
         .map-buttons {
           display: flex;
+          flex-wrap: wrap;
           gap: 1rem;
           margin-top: 0.5rem;
+          justify-content: center;
         }
         .map-button {
           padding: 0.5rem 1rem;
