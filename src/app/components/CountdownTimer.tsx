@@ -8,6 +8,7 @@ interface TimeLeft {
   hours: number;
   minutes: number;
   seconds: number;
+  isPast: boolean;
 }
 
 export default function CountdownTimer() {
@@ -17,6 +18,7 @@ export default function CountdownTimer() {
     hours: 0,
     minutes: 0,
     seconds: 0,
+    isPast: false,
   });
 
   const [mounted, setMounted] = useState(false);
@@ -29,41 +31,41 @@ export default function CountdownTimer() {
     const calculateTimeLeft = (): TimeLeft => {
       const weddingDate = new Date("2026-07-11T16:00:00"); // 4:00 PM on July 11, 2026
       const now = new Date();
-      const difference = weddingDate.getTime() - now.getTime();
+      const isPast = now.getTime() >= weddingDate.getTime();
 
-      if (difference > 0) {
-        // Calculate months by counting forward from now
-        let months = 0;
-        const tempDate = new Date(now);
+      // Always measure from the earlier date to the later date so the same
+      // month/day/hour math works whether we're counting down or up.
+      const from = isPast ? weddingDate : now;
+      const to = isPast ? now : weddingDate;
 
-        // Count full months until we'd overshoot the wedding date
-        while (true) {
-          const nextMonth = new Date(tempDate);
-          nextMonth.setMonth(nextMonth.getMonth() + 1);
-          if (nextMonth.getTime() <= weddingDate.getTime()) {
-            months++;
-            tempDate.setMonth(tempDate.getMonth() + 1);
-          } else {
-            break;
-          }
+      // Count full months between `from` and `to`, without overshooting `to`.
+      const currentDate = new Date(from);
+      let months = 0;
+
+      while (true) {
+        const nextMonth = new Date(currentDate);
+        nextMonth.setMonth(nextMonth.getMonth() + 1);
+        if (nextMonth.getTime() <= to.getTime()) {
+          months++;
+          currentDate.setMonth(currentDate.getMonth() + 1);
+        } else {
+          break;
         }
-
-        // Calculate remaining time after full months
-        const remainingTime = weddingDate.getTime() - tempDate.getTime();
-
-        const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-        );
-        const minutes = Math.floor(
-          (remainingTime % (1000 * 60 * 60)) / (1000 * 60),
-        );
-        const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
-        return { months, days, hours, minutes, seconds };
       }
 
-      return { months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
+      // Calculate remaining time after months
+      const remainingTime = to.getTime() - currentDate.getTime();
+
+      const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
+      const minutes = Math.floor(
+        (remainingTime % (1000 * 60 * 60)) / (1000 * 60),
+      );
+      const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+      return { months, days, hours, minutes, seconds, isPast };
     };
 
     const timer = setInterval(() => {
@@ -125,6 +127,11 @@ export default function CountdownTimer() {
 
   return (
     <div className="countdown-timer">
+      {timeLeft.isPast && (
+        <div className="countdown-since-label">
+          🎉 Married! It&apos;s been
+        </div>
+      )}
       <div className="countdown-grid">
         <div className="countdown-item">
           <div className="countdown-number">{timeLeft.months}</div>
