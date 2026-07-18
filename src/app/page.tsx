@@ -97,6 +97,15 @@ export default function Home() {
             </li>
             <li>
               <a
+                href="#photo-sharing"
+                className="nav-link"
+                onClick={() => scrollToSection("photo-sharing")}
+              >
+                Photos
+              </a>
+            </li>
+            <li>
+              <a
                 href="#rsvp"
                 className="nav-link"
                 onClick={() => scrollToSection("rsvp")}
@@ -179,6 +188,15 @@ export default function Home() {
               onClick={() => scrollToSection("gallery")}
             >
               Gallery
+            </a>
+          </li>
+          <li className="mobile-menu-item">
+            <a
+              href="#photo-sharing"
+              className="mobile-menu-link"
+              onClick={() => scrollToSection("photo-sharing")}
+            >
+              Photos
             </a>
           </li>
           <li className="mobile-menu-item">
@@ -591,6 +609,29 @@ export default function Home() {
                 height={500}
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Sharing Section */}
+      <section id="photo-sharing" className="section">
+        <div className="container">
+          <h2 className="section-title">Share Your Photos</h2>
+          <p className="section-subtitle">
+            Capture the moments! Upload your photos from the wedding or browse
+            what others have shared. We would love to see the celebration
+            through your eyes.
+          </p>
+          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+            <a
+              href="https://partypics.jpc.io/wedding"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{ fontSize: "1.1rem", padding: "1rem 2rem" }}
+            >
+              Upload & View Photos
+            </a>
           </div>
         </div>
       </section>
